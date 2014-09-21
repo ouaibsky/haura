@@ -61,7 +61,7 @@
 					<artifactId>maven-jaxb2-plugin</artifactId>
 					<version>0.8.2</version>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
