@@ -6,7 +6,6 @@
 		<artifactId>haura-parent</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<groupId>org.icroco.haura</groupId>
 	<artifactId>kra</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<dependencies>
@@ -15,107 +14,41 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.7</version>
 		</dependency>
-		<!-- <dependency> -->
-		<!-- <groupId>org.slf4j</groupId> -->
-		<!-- <artifactId>slf4j-simple</artifactId> -->
-		<!-- <version>1.7.1</version> -->
-		<!-- </dependency> -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>1.1.2</version>
 		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>org.quartz-scheduler</groupId> -->
+		<!-- <artifactId>quartz</artifactId> -->
+		<!-- <version>2.2.1</version> -->
+		<!-- </dependency> -->
 		<dependency>
-			<groupId>org.quartz-scheduler</groupId>
-			<artifactId>quartz</artifactId>
-			<version>2.2.1</version>
+			<groupId>tuwien.auto</groupId>
+			<artifactId>calimero-core</artifactId>
+			<version>2.0.0-SNAPSHOT</version>
 		</dependency>
-		<dependency>
-			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>2.4</version>
-		</dependency>
+
+		<!-- TEST -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12-beta-1</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.google.code.findbugs</groupId>
-			<artifactId>jsr305</artifactId>
-			<version>3.0.0</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jvnet.jaxb2_commons</groupId>
-			<artifactId>jaxb2-basics-runtime</artifactId>
-			<version>0.8.2</version>
-			<scope>compile</scope>
-		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>org.slf4j</groupId> -->
+		<!-- <artifactId>slf4j-simple</artifactId> -->
+		<!-- <version>1.7.1</version> -->
+		<!-- </dependency> -->
+
 	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.3.2</version>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-					<showDeprecation>true</showDeprecation>
-					<showWarnings>true</showWarnings>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.jvnet.jaxb2.maven2</groupId>
-				<artifactId>maven-jaxb2-plugin</artifactId>
-				<version>0.8.2</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>generate</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<schemaIncludes>
-						<include>*.xsd</include>
-					</schemaIncludes>
-					<bindingIncludes>
-						<include>*.xjb</include>
-					</bindingIncludes>
-					<!-- <generatePackage>org.icroco.domo.model</generatePackage> -->
-					<args>
-						<arg>-npa</arg>
-						<arg>-Xinheritance</arg>
-						<arg>-Xinject-code</arg>
-						<arg>-XtoString</arg>
-						<arg>-Xannotate</arg>
-					</args>
-					<extension>true</extension>
-					<plugins>
-						<plugin>
-							<groupId>org.jvnet.jaxb2_commons</groupId>
-							<artifactId>jaxb2-basics</artifactId>
-							<version>0.6.4</version>
-						</plugin>
-						<plugin>
-							<groupId>org.jvnet.jaxb2_commons</groupId>
-							<artifactId>jaxb2-basics-annotate</artifactId>
-							<version>0.6.4</version>
-						</plugin>
-						<plugin>
-							<groupId>org.jvnet.jaxb2_commons</groupId>
-							<artifactId>jaxb2-basics-jaxb-xjc</artifactId>
-							<version>2.2.4-1</version>
-						</plugin>
-					</plugins>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.3.2</version>
 				<configuration>
 					<archive>
 						<manifest>
@@ -127,7 +60,6 @@
 			<plugin>
 				<groupId>com.jolira</groupId>
 				<artifactId>onejar-maven-plugin</artifactId>
-				<version>1.4.4</version>
 				<executions>
 					<execution>
 						<configuration>
